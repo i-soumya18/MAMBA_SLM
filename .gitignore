@@ -66,6 +66,7 @@ lightning_logs/
 
 # Datasets & Cache (large files)
 data/
+data_cache/
 datasets/
 cache/
 .cache/
