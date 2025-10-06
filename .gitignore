@@ -1,0 +1,208 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+.virtualenv/
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+.idea_modules/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Model Checkpoints & Weights (large files)
+checkpoints/
+checkpoints_*/
+*.bin
+*.safetensors
+*.ckpt
+*.pth
+*.pt
+model_*.bin
+pytorch_model.bin
+*.onnx
+
+# Training Outputs
+runs/
+logs/
+tensorboard/
+wandb/
+outputs/
+lightning_logs/
+
+# Datasets & Cache (large files)
+data/
+datasets/
+cache/
+.cache/
+*.arrow
+*.parquet
+*.csv
+*.json.gz
+*.jsonl
+*.txt.gz
+
+# HuggingFace Cache
+.huggingface/
+~/.cache/huggingface/
+
+# DeepSpeed
+.deepspeed/
+deepspeed_logs/
+ds_config_*.json
+
+# Generated Files
+*.log
+*.out
+*.err
+*.pid
+
+# Temporary Files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Compilation
+*.o
+*.a
+*.pyc
+*.pyd
+*.dll
+*.exe
+*.so
+
+# Distribution / Packaging
+.Python
+*.manifest
+*.spec
+
+# Testing
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+*.cover
+*.py,cover
+.cache
+nosetests.xml
+coverage.xml
+*.coveragerc
+
+# Documentation
+docs/_build/
+site/
+.mkdocs/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDEs
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Project Specific - Large Model Files
+models/
+saved_models/
+pretrained/
+finetuned/
+
+# Project Specific - Generated Data
+tokenized/
+preprocessed/
+curated/
+filtered/
+
+# Project Specific - Evaluation Results
+results/
+eval_results/
+benchmark_results/
+*.results.json
+
+# Project Specific - Temporary Experiments
+experiments/
+scratch/
+temp/
+tmp/
+
+# Compressed Files (unless version controlled)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+*.bz2
+*.xz
+
+# Keep Important Config Files (comment out if you want to ignore)
+# !config.json
+# !requirements.txt
+# !setup.py
+
+# Keep Documentation
+!README*.md
+!WORKFLOW*.md
+!QUICK*.md
+!PRODUCTION*.md
+!LICENSE
+
+# Keep Small Test Data
+!test_data/
+!sample_data/
