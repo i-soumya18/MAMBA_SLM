@@ -1,4 +1,6 @@
-# Hybrid Mamba-Transformer Training Requirements
+# Hybrid Mamba-Transformer Training Requirements - Enhanced Edition
+
+# Core dependencies
 torch>=2.0.0
 transformers>=4.35.0
 tokenizers>=0.15.0
@@ -8,7 +10,34 @@ numpy>=1.24.0
 scipy>=1.11.0
 matplotlib>=3.7.0
 tqdm>=4.65.0
-wandb>=0.15.0  # Optional for experiment tracking
-tensorboard>=2.14.0  # Optional for logging
 sentencepiece>=0.1.99
 protobuf>=3.20.0
+
+# Training & Monitoring (Optional)
+wandb>=0.15.0  # Experiment tracking
+tensorboard>=2.14.0  # Logging visualization
+
+# Enhanced Features
+# Flash Attention 2 (for memory-efficient attention)
+# Uncomment if you want Flash Attention support:
+# flash-attn>=2.0.0  # Install with: pip install flash-attn --no-build-isolation
+
+# Quantization (8-bit and 4-bit model compression)
+bitsandbytes>=0.41.0  # For 8-bit/4-bit quantization
+
+# LoRA/QLoRA (parameter-efficient fine-tuning)
+peft>=0.5.0  # Parameter-Efficient Fine-Tuning
+
+# ONNX Export (cross-platform deployment)
+onnx>=1.14.0
+onnxruntime>=1.16.0
+onnxruntime-gpu>=1.16.0  # GPU acceleration for ONNX
+# onnxoptimizer>=0.3.0  # Optional: ONNX model optimization
+
+# Extended context support
+einops>=0.7.0  # Tensor operations for advanced position encoding
+
+# Development tools (Optional)
+pytest>=7.4.0  # Testing
+black>=23.0.0  # Code formatting
+flake8>=6.0.0  # Linting
