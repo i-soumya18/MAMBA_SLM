@@ -1,0 +1,18 @@
+{
+    "model_type": "hybrid_mamba_transformer",
+    "vocab_size": 32000,
+    "d_model": 512,
+    "n_layers": 8,
+    "n_heads": 8,
+    "d_state": 16,
+    "expand_factor": 2,
+    "dropout": 0.1,
+    "max_seq_length": 1024,
+    "layer_pattern": ["mamba", "mamba", "mamba", "mamba", "mamba", "transformer", "transformer", "transformer"],
+    "architectures": ["HybridMambaTransformer"],
+    "torch_dtype": "float16",
+    "use_cache": true,
+    "pad_token_id": 0,
+    "bos_token_id": 1,
+    "eos_token_id": 2
+}
