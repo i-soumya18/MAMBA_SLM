@@ -85,7 +85,7 @@ def load_model(args):
         config = {}
     
     # Load model
-    from MAMBA_SLM import HybridMambaTransformer
+    from model import HybridMambaTransformer
     
     if args.load_in_8bit or args.load_in_4bit:
         # Load with quantization
@@ -104,15 +104,25 @@ def load_model(args):
         # Load normally
         model = HybridMambaTransformer(**config)
         
-        # Load weights
+        # Load weights - try safetensors first, then pytorch_model.bin
+        model_path = Path(args.model_path)
+        safetensors_path = model_path / "model.safetensors"
+        pytorch_path = model_path / "pytorch_model.bin"
+        
         try:
-            state_dict = torch.load(
-                f"{args.model_path}/pytorch_model.bin",
-                map_location=args.device
-            )
-            model.load_state_dict(state_dict, strict=False)
-        except FileNotFoundError:
-            print("Warning: Model weights not found, using random initialization")
+            if safetensors_path.exists():
+                from safetensors.torch import load_file
+                state_dict = load_file(str(safetensors_path))
+                model.load_state_dict(state_dict, strict=False)
+                print(f"✓ Loaded weights from {safetensors_path.name}")
+            elif pytorch_path.exists():
+                state_dict = torch.load(str(pytorch_path), map_location=args.device)
+                model.load_state_dict(state_dict, strict=False)
+                print(f"✓ Loaded weights from {pytorch_path.name}")
+            else:
+                print("Warning: Model weights not found, using random initialization")
+        except Exception as e:
+            print(f"Warning: Failed to load weights: {e}")
         
         model = model.to(args.device)
         model.eval()

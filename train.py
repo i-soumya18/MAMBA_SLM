@@ -99,7 +99,7 @@ def parse_args():
 def setup_model(args):
     """Initialize model with specified configuration"""
     # Import here to avoid circular imports
-    from MAMBA_SLM import HybridMambaTransformer
+    from model import HybridMambaTransformer
     
     print("\n" + "="*60)
     print("Setting up model...")
@@ -237,6 +237,10 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-1B")
     tokenizer.pad_token = tokenizer.eos_token
     print("✓ Tokenizer loaded")
+    
+    # Update vocab_size to match tokenizer
+    args.vocab_size = len(tokenizer)
+    print(f"Vocab size set to: {args.vocab_size}")
     
     # Setup model
     model = setup_model(args)
