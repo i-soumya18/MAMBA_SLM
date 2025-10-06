@@ -37,6 +37,11 @@ onnxruntime-gpu>=1.16.0  # GPU acceleration for ONNX
 # Extended context support
 einops>=0.7.0  # Tensor operations for advanced position encoding
 
+# GUI Dashboard
+PyQt6>=6.6.0  # Modern Qt6 bindings for Python
+PyQt6-Qt6>=6.6.0  # Qt6 libraries
+PyQt6-sip>=13.6.0  # SIP bindings
+
 # Development tools (Optional)
 pytest>=7.4.0  # Testing
 black>=23.0.0  # Code formatting

@@ -2,13 +2,31 @@
 
 A lightweight, efficient language model combining Mamba (State Space Model) and Transformer architectures, optimized for local inference on consumer hardware like RTX 4060 8GB VRAM.
 
+## 🎛️ NEW: Unified Dashboard!
+
+**Manage everything with a beautiful GUI!** No command line required.
+
+```bash
+# Launch the dashboard (Windows)
+launch_dashboard.bat
+
+# Or (Linux/Mac)
+python launch_dashboard.py
+```
+
+**Features**: Dataset loading, training, fine-tuning, inference, ONNX export, benchmarking - all in one window!  
+📖 See [DASHBOARD_README.md](Documentation/DASHBOARD_README.md) for complete guide.
+
 ## Features
 
+- **🎨 Unified Dashboard**: PyQt6-based GUI for all operations
 - **Hybrid Architecture**: 70% Mamba layers + 30% Transformer layers for optimal efficiency
 - **Memory Optimized**: Designed for 8GB VRAM with gradient checkpointing and FP16 training
 - **Local Inference Ready**: Produces model weights for offline usage
 - **Flexible Generation**: Support for various sampling strategies
 - **Interactive Chat**: Built-in chat interface for testing
+- **Advanced Training**: Flash Attention, LoRA/QLoRA, quantization, extended context
+- **Production Ready**: ONNX export, benchmarking, evaluation tools
 
 ## Model Specifications
 
